@@ -21,7 +21,7 @@ class WorkbookEncoder {
     var serializers = CellSerializerRegistry()
 
     var defaultHeaderStyle = CellStyle()
-    var defaultCellStyle = CellStyle()
+    var defaultValueStyle = CellStyle()
 
     var clock: Clock = Clock.systemDefaultZone()
 
@@ -54,7 +54,7 @@ class WorkbookEncoder {
             // Sheet
             val sheetName = sheetNameResolver.getSheetName(typeInfo)
             val wbSheet = workbook.createSheet(sheetName)
-            val sheetHelper = SheetHelper(wbSheet, defaultCellStyle, defaultHeaderStyle, serializers, workbookHelper, columnNameResolver)
+            val sheetHelper = SheetHelper(wbSheet, defaultValueStyle, defaultHeaderStyle, serializers, workbookHelper, columnNameResolver)
 
             // Header
             sheetHelper.createHead(typeInfo)
