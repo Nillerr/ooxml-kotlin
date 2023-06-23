@@ -1,5 +1,5 @@
 <xml-fragment xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:main="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
-  <main:dimension ref="A1:O2"/>
+  <main:dimension ref="A1:O3"/>
   <main:sheetViews>
     <main:sheetView workbookViewId="0" tabSelected="true"/>
   </main:sheetViews>
@@ -146,10 +146,67 @@
         <main:v>5.52</main:v>
       </main:c>
     </main:row>
+    <main:row r="3">
+      <main:c r="A3" s="16" t="inlineStr">
+        <main:is>
+          <main:t>Power</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="B3" s="17" t="inlineStr">
+        <main:is>
+          <main:t>Computers</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="C3" s="18" t="n">
+        <main:v>1.0</main:v>
+      </main:c>
+      <main:c r="D3" s="19" t="n">
+        <main:v>23000.0</main:v>
+      </main:c>
+      <main:c r="E3" s="20" t="inlineStr">
+        <main:is>
+          <main:t>DKK</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="F3" s="21" t="n">
+        <main:v>44714.51493055555</main:v>
+      </main:c>
+      <main:c r="G3" s="22" t="inlineStr">
+        <main:is>
+          <main:t>https://www.power.dk/computere-og-tablets/computere/baerbar-pc/hp-14s-fq2473no-14-baerbar-pc/p-1846428/</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="H3" s="23" t="inlineStr">
+        <main:is>
+          <main:t>HP Bærbar</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="I3" s="24"/>
+      <main:c r="J3" s="25" t="n">
+        <main:v>5.52</main:v>
+      </main:c>
+      <main:c r="K3" s="26" t="b">
+        <main:v>1</main:v>
+      </main:c>
+      <main:c r="L3" s="27" t="n">
+        <main:v>44987.002916666665</main:v>
+      </main:c>
+      <main:c r="M3" s="28" t="n">
+        <main:v>44584.0</main:v>
+      </main:c>
+      <main:c r="N3" s="29" t="n">
+        <main:v>25569.48130787037</main:v>
+      </main:c>
+      <main:c r="O3" s="30" t="n">
+        <main:v>5.52</main:v>
+      </main:c>
+    </main:row>
   </main:sheetData>
   <main:hyperlinks>
     <main:hyperlink ref="G2" r:id="rId1"/>
     <main:hyperlink ref="H2" r:id="rId2"/>
+    <main:hyperlink ref="G3" r:id="rId3"/>
+    <main:hyperlink ref="H3" r:id="rId4"/>
   </main:hyperlinks>
   <main:pageMargins bottom="0.75" footer="0.3" header="0.3" left="0.7" right="0.7" top="0.75"/>
 </xml-fragment>

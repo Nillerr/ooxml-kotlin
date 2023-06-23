@@ -41,7 +41,17 @@ class WorkbookEncoderTests {
                 date = LocalDateTime.parse("2022-06-07T23:21:30"),
                 receipt = URI("https://www.ikea.com/dk/da/p/lagkapten-alex-skrivebord-turkisgra-sort-s19523513/"),
                 hyperlink = Hyperlink("LAGKAPTEN / ALEX Skrivebord, turkisgrå/sort, 140x60 cm - IKEA", URI("https://www.ikea.com/dk/da/p/lagkapten-alex-skrivebord-turkisgra-sort-s19523513/")),
-            )
+            ),
+            Expense(
+                merchant = "Power",
+                description = "Computers",
+                count = 1,
+                amount = BigDecimal("23000.00"),
+                currency = "DKK",
+                date = LocalDateTime.parse("2022-06-02T12:21:30"),
+                receipt = URI("https://www.power.dk/computere-og-tablets/computere/baerbar-pc/hp-14s-fq2473no-14-baerbar-pc/p-1846428/"),
+                hyperlink = Hyperlink("HP Bærbar", URI("https://www.power.dk/computere-og-tablets/computere/baerbar-pc/hp-14s-fq2473no-14-baerbar-pc/p-1846428/")),
+            ),
         )
 
         // When
