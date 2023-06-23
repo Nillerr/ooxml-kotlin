@@ -3,6 +3,7 @@ package io.nillerr.ooxml
 import io.nillerr.ooxml.annotation.CellStyle
 import io.nillerr.ooxml.internal.firstOrLast
 import java.math.BigDecimal
+import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -21,10 +22,12 @@ open class DefaultDataFormatResolver : DataFormatResolver {
     open fun getDataFormat(columnInfo: ColumnInfo): String? {
         return when (columnInfo.propertyType) {
             typeOf<Int>() -> null
+            typeOf<Double>() -> "#,##0.00"
             typeOf<BigDecimal>() -> "#,##0.00"
             typeOf<LocalDate>() -> "dd/mm/yyyy"
             typeOf<LocalTime>() -> "HH:MM"
             typeOf<LocalDateTime>() -> "dd/mm/yyy HH:MM"
+            typeOf<Instant>() -> "dd/mm/yyy HH:MM:SS"
             else -> null
         }
     }

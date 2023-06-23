@@ -31,10 +31,6 @@ class WorkbookEncoderTests {
     @Test
     fun foo() {
         // Given
-        val expectedWorkbookXML = readTestResourceAsString("/output/expected-workbook")
-        val expectedStylesheetXML = readTestResourceAsString("/output/expected-stylesheet")
-        val expectedSheetXML = readTestResourceAsString("/output/expected-sheet")
-
         val expenses = listOf(
             Expense(
                 merchant = "IKEA",
@@ -56,10 +52,10 @@ class WorkbookEncoderTests {
 
         // Then
         val workbook = assertIsWorkbook(output)
-        assertWorkbookEqualsXML(expectedWorkbookXML, workbook)
-        assertStylesEqualsXML(expectedStylesheetXML, workbook)
+        assertWorkbookEqualsXMLResource("/output/expected-workbook", workbook)
+        assertStylesheetEqualsXMLResource("/output/expected-stylesheet", workbook)
 
         val sheet = assertSingleSheet(workbook)
-        assertSheetEqualsXML(expectedSheetXML, sheet)
+        assertSheetEqualsXMLResource("/output/expected-sheet", sheet)
     }
 }

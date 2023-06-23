@@ -4,6 +4,8 @@ import io.nillerr.ooxml.CellWriter
 import io.nillerr.ooxml.Hyperlink
 import org.apache.poi.common.usermodel.HyperlinkType
 import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.CellStyle
+import org.apache.poi.ss.usermodel.CellType
 import java.net.URI
 import java.time.Instant
 import java.time.LocalDate
