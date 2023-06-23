@@ -1,6 +1,6 @@
 # OOXML for Kotlin
 
-This repository contains the source code for libraries used to generate OOXML documents using Kotlin.
+Provides means of generating OOXML documents using Kotlin `data class`es.
 
 ## Spreadsheet
 
