@@ -8,10 +8,10 @@ plugins {
     kotlin("jvm")
 }
 
-group = "io.github.nillerr.ooxml"
-version = "1.0.0-SNAPSHOT"
-
 allprojects {
+    group = "io.github.nillerr"
+    version = "1.0.0-SNAPSHOT"
+
     repositories {
         mavenCentral()
     }

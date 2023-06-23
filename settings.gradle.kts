@@ -11,4 +11,4 @@ pluginManagement {
     }
 }
 
-include(":spreadsheet")
+include(":ooxml-spreadsheet")
