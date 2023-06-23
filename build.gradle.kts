@@ -7,7 +7,7 @@ plugins {
     kotlin("jvm")
 }
 
-group = "io.nillerr.ooxml"
+group = "io.github.nillerr.ooxml"
 version = "1.0-SNAPSHOT"
 
 allprojects {
