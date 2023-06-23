@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.nillerr.ooxml"
-version = "1.0-SNAPSHOT"
+version = "1.0.0-SNAPSHOT"
 
 allprojects {
     repositories {
