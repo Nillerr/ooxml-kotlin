@@ -1,0 +1,147 @@
+<xml-fragment xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:main="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+  <main:dimension ref="A1:N2"/>
+  <main:sheetViews>
+    <main:sheetView workbookViewId="0" tabSelected="true"/>
+  </main:sheetViews>
+  <main:sheetFormatPr defaultRowHeight="15.0"/>
+  <main:cols>
+    <main:col min="1" max="1" customWidth="true" width="20.0"/>
+    <main:col min="2" max="2" customWidth="true" width="50.0"/>
+    <main:col min="3" max="3" customWidth="true" width="6.0"/>
+    <main:col min="4" max="4" customWidth="true" width="12.0"/>
+    <main:col min="5" max="5" customWidth="true" width="10.0"/>
+    <main:col min="6" max="6" customWidth="true" width="14.0"/>
+    <main:col min="7" max="7" customWidth="true" width="100.0"/>
+  </main:cols>
+  <main:sheetData>
+    <main:row r="1">
+      <main:c r="A1" s="1" t="inlineStr">
+        <main:is>
+          <main:t>Merchant</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="B1" s="2" t="inlineStr">
+        <main:is>
+          <main:t>Description</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="C1" s="3" t="inlineStr">
+        <main:is>
+          <main:t>expenses.column.count</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="D1" s="4" t="inlineStr">
+        <main:is>
+          <main:t>Amount</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="E1" s="5" t="inlineStr">
+        <main:is>
+          <main:t>Currency</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="F1" s="6" t="inlineStr">
+        <main:is>
+          <main:t>Date</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="G1" s="7" t="inlineStr">
+        <main:is>
+          <main:t>Receipt</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="H1" s="8" t="inlineStr">
+        <main:is>
+          <main:t>hyperlink</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="I1" s="9" t="inlineStr">
+        <main:is>
+          <main:t>blank</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="J1" s="10" t="inlineStr">
+        <main:is>
+          <main:t>double</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="K1" s="11" t="inlineStr">
+        <main:is>
+          <main:t>boolean</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="L1" s="12" t="inlineStr">
+        <main:is>
+          <main:t>instant</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="M1" s="13" t="inlineStr">
+        <main:is>
+          <main:t>localDate</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="N1" s="14" t="inlineStr">
+        <main:is>
+          <main:t>localTime</main:t>
+        </main:is>
+      </main:c>
+    </main:row>
+    <main:row r="2">
+      <main:c r="A2" s="15" t="inlineStr">
+        <main:is>
+          <main:t>IKEA</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="B2" s="16" t="inlineStr">
+        <main:is>
+          <main:t>Office Furniture</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="C2" s="17" t="n">
+        <main:v>6.0</main:v>
+      </main:c>
+      <main:c r="D2" s="18" t="n">
+        <main:v>1425.0</main:v>
+      </main:c>
+      <main:c r="E2" s="19" t="inlineStr">
+        <main:is>
+          <main:t>DKK</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="F2" s="20" t="n">
+        <main:v>44719.97326388889</main:v>
+      </main:c>
+      <main:c r="G2" s="21" t="inlineStr">
+        <main:is>
+          <main:t>https://www.ikea.com/dk/da/p/lagkapten-alex-skrivebord-turkisgra-sort-s19523513/</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="H2" s="22" t="inlineStr">
+        <main:is>
+          <main:t>LAGKAPTEN / ALEX Skrivebord, turkisgrå/sort, 140x60 cm - IKEA</main:t>
+        </main:is>
+      </main:c>
+      <main:c r="I2" s="23"/>
+      <main:c r="J2" s="24" t="n">
+        <main:v>5.52</main:v>
+      </main:c>
+      <main:c r="K2" s="25" t="b">
+        <main:v>1</main:v>
+      </main:c>
+      <main:c r="L2" s="26" t="n">
+        <main:v>44987.002916666665</main:v>
+      </main:c>
+      <main:c r="M2" s="27" t="n">
+        <main:v>44584.0</main:v>
+      </main:c>
+      <main:c r="N2" s="28" t="n">
+        <main:v>25569.48130787037</main:v>
+      </main:c>
+    </main:row>
+  </main:sheetData>
+  <main:hyperlinks>
+    <main:hyperlink ref="G2" r:id="rId1"/>
+    <main:hyperlink ref="H2" r:id="rId2"/>
+  </main:hyperlinks>
+  <main:pageMargins bottom="0.75" footer="0.3" header="0.3" left="0.7" right="0.7" top="0.75"/>
+</xml-fragment>

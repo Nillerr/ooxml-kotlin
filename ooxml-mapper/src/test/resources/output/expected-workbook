@@ -1,0 +1,9 @@
+<xml-fragment xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:main="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+  <main:workbookPr date1904="false"/>
+  <main:bookViews>
+    <main:workbookView activeTab="0"/>
+  </main:bookViews>
+  <main:sheets>
+    <main:sheet name="Expenses" r:id="rId3" sheetId="1"/>
+  </main:sheets>
+</xml-fragment>
