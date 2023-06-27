@@ -6,6 +6,8 @@ plugins {
     id("maven-publish")
 
     kotlin("jvm")
+
+    id("org.jetbrains.dokka")
 }
 
 allprojects {
@@ -20,6 +22,7 @@ allprojects {
     apply(plugin = "signing")
     apply(plugin = "maven-publish")
     apply(plugin = "kotlin")
+    apply(plugin = "org.jetbrains.dokka")
 }
 
 subprojects {
@@ -35,6 +38,18 @@ subprojects {
         withType<KotlinCompile> {
             kotlinOptions.jvmTarget = "1.8"
         }
+    }
+
+    val dokkaHtmlJar by tasks.registering(Jar::class) {
+        dependsOn(tasks.dokkaHtml)
+        from(tasks.dokkaHtml.flatMap { it.outputDirectory })
+        archiveClassifier.set("html-docs")
+    }
+
+    val dokkaJavadocJar by tasks.registering(Jar::class) {
+        dependsOn(tasks.dokkaJavadoc)
+        archiveClassifier.set("javadoc")
+        from(tasks.dokkaJavadoc.flatMap { it.outputDirectory })
     }
 
     val sourcesJar by tasks.registering(Jar::class) {
@@ -75,7 +90,9 @@ subprojects {
             create<MavenPublication>("maven") {
                 from(components["java"])
 
-                artifact(sourcesJar.get())
+                artifact(sourcesJar)
+                artifact(dokkaJavadocJar)
+                artifact(dokkaHtmlJar)
 
                 pom {
                     name.set("OOXML for Kotlin")
