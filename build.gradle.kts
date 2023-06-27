@@ -10,7 +10,7 @@ plugins {
 
 allprojects {
     group = "io.github.nillerr"
-    version = "1.0.0-SNAPSHOT"
+    version = "1.0.0"
 
     repositories {
         mavenCentral()
@@ -20,13 +20,9 @@ allprojects {
     apply(plugin = "signing")
     apply(plugin = "maven-publish")
     apply(plugin = "kotlin")
+}
 
-    publishing {
-        publications {
-            create<MavenPublication>("maven")
-        }
-    }
-
+subprojects {
     dependencies {
         testImplementation(kotlin("test"))
     }
@@ -41,9 +37,9 @@ allprojects {
         }
     }
 
-    java {
-        withJavadocJar()
-        withSourcesJar()
+    val sourcesJar by tasks.registering(Jar::class) {
+        archiveClassifier.set("sources")
+        from(sourceSets.main.get().allSource)
     }
 
     publishing {
@@ -76,7 +72,11 @@ allprojects {
         }
 
         publications {
-            withType<MavenPublication> {
+            create<MavenPublication>("maven") {
+                from(components["java"])
+
+                artifact(sourcesJar.get())
+
                 pom {
                     name.set("OOXML for Kotlin")
                     description.set("Provides means of generating OOXML documents using Kotlin data classes.")

@@ -2,6 +2,14 @@
 
 Provides means of generating OOXML documents using Kotlin `data class`es.
 
+## Installation
+
+```kotlin
+dependencies {
+    implementation("io.github.nillerr:ooxml-spreadsheet:1.0.0")
+}
+```
+
 ## Spreadsheet
 
 To create a spreadsheet we use the `WorkbookEncoder`, which we provide with a list of instances of a `data class`:
