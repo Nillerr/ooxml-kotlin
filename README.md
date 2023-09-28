@@ -6,7 +6,7 @@ Provides means of generating OOXML documents using Kotlin `data class`es.
 
 ```kotlin
 dependencies {
-    implementation("io.github.nillerr:ooxml-spreadsheet:1.0.0")
+    implementation("io.github.nillerr:ooxml-spreadsheet:1.0.1")
 }
 ```
 

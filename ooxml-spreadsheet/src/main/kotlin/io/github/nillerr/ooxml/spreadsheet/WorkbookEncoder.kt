@@ -15,7 +15,7 @@ class WorkbookEncoder {
     var dataFormatResolver: DataFormatResolver = DefaultDataFormatResolver()
 
     var applicationName: String = "io.nillerr.ooxml:spreadsheet"
-    var applicationVersion: String = "1.0.0"
+    var applicationVersion: String = "1.0.1"
 
     var typeRegistry = TypeRegistry()
     var serializers = CellSerializerRegistry()
