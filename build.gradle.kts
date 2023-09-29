@@ -38,6 +38,12 @@ subprojects {
         withType<KotlinCompile> {
             kotlinOptions.jvmTarget = "1.8"
         }
+
+        java {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(8))
+            }
+        }
     }
 
     val dokkaHtmlJar by tasks.registering(Jar::class) {

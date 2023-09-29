@@ -7,7 +7,7 @@ fun readTestResourceAsString(name: String): String {
 }
 
 fun readTestResource(name: String): ByteArray {
-    return getTestResource(name).readAllBytes()
+    return getTestResource(name).readBytes()
 }
 
 fun getTestResource(name: String): InputStream {

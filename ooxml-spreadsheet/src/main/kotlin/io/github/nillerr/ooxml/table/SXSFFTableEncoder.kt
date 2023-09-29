@@ -116,7 +116,7 @@ class SXSFFTableEncoder(options: SXSFFTableEncoderOptions) : TableEncoder {
             is BooleanColumnValue -> setCellValue(value.value)
             is InstantColumnValue -> setCellValue(Date.from(value.value))
             is LocalDateColumnValue -> setCellValue(value.value.atStartOfDay())
-            is LocalTimeColumnValue -> setCellValue(value.value.atDate(LocalDate.EPOCH))
+            is LocalTimeColumnValue -> setCellValue(value.value.atDate(LocalDate.ofEpochDay(0)))
             is LocalDateTimeColumnValue -> setCellValue(value.value)
             is HyperlinkColumnValue -> {
                 val helper = sheet.workbook.creationHelper

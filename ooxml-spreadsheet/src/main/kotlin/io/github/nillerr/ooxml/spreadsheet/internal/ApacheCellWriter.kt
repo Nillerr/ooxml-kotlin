@@ -4,15 +4,11 @@ import io.github.nillerr.ooxml.spreadsheet.CellWriter
 import io.github.nillerr.ooxml.spreadsheet.Hyperlink
 import org.apache.poi.common.usermodel.HyperlinkType
 import org.apache.poi.ss.usermodel.Cell
-import org.apache.poi.ss.usermodel.CellStyle
-import org.apache.poi.ss.usermodel.CellType
-import java.net.URI
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
-import java.time.OffsetDateTime
-import java.util.*
+import java.util.Date
 
 internal class ApacheCellWriter(private val cell: Cell) : CellWriter {
     override fun writeString(value: String) {
@@ -36,7 +32,7 @@ internal class ApacheCellWriter(private val cell: Cell) : CellWriter {
     }
 
     override fun writeLocalTime(value: LocalTime) {
-        cell.setCellValue(value.atDate(LocalDate.EPOCH))
+        cell.setCellValue(value.atDate(LocalDate.ofEpochDay(0)))
     }
 
     override fun writeLocalDateTime(value: LocalDateTime) {
