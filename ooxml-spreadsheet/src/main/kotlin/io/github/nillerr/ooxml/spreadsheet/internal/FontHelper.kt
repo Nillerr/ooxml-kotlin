@@ -1,14 +1,12 @@
 package io.github.nillerr.ooxml.spreadsheet.internal
 
 import io.github.nillerr.ooxml.spreadsheet.IndexedColor
-import io.github.nillerr.ooxml.spreadsheet.annotation.CellFont
 import io.github.nillerr.ooxml.spreadsheet.style.FontUnderline
 import io.github.nillerr.ooxml.spreadsheet.style.FontWeight
-import io.github.nillerr.ooxml.table.ColumnFont
 import org.apache.poi.ss.usermodel.Font
 
 internal object FontHelper {
-    fun setSize(font: Font, annotations: List<CellFont>) {
+    fun setSize(font: Font, annotations: List<io.github.nillerr.ooxml.spreadsheet.annotation.CellFont>) {
         val annotation = annotations.firstOrNull { it.size > -1 }
         if (annotation != null) {
             font.setSize(annotation.size)
@@ -17,7 +15,7 @@ internal object FontHelper {
         font.setSize(annotations.last().size)
     }
 
-    fun setWeight(font: Font, annotations: List<CellFont>) {
+    fun setWeight(font: Font, annotations: List<io.github.nillerr.ooxml.spreadsheet.annotation.CellFont>) {
         val annotation = annotations.firstOrNull { it.weight != FontWeight.UNSPECIFIED }
         if (annotation != null) {
             font.setWeight(annotation.weight)
@@ -26,7 +24,7 @@ internal object FontHelper {
         font.setWeight(annotations.last().weight)
     }
 
-    fun setUnderline(font: Font, annotations: List<CellFont>) {
+    fun setUnderline(font: Font, annotations: List<io.github.nillerr.ooxml.spreadsheet.annotation.CellFont>) {
         val annotation = annotations.firstOrNull { it.underline != FontUnderline.UNSPECIFIED }
         if (annotation != null) {
             font.setUnderline(annotation.underline)
@@ -35,7 +33,7 @@ internal object FontHelper {
         font.setUnderline(annotations.last().underline)
     }
 
-    fun setColor(font: Font, annotations: List<CellFont>) {
+    fun setColor(font: Font, annotations: List<io.github.nillerr.ooxml.spreadsheet.annotation.CellFont>) {
         val annotation = annotations.firstOrNull { it.indexedColor != IndexedColor.UNSPECIFIED }
         if (annotation != null) {
             font.setColor(annotation.indexedColor)
@@ -45,7 +43,7 @@ internal object FontHelper {
     }
 
     @JvmName("setSizeForColumn")
-    fun setSize(font: Font, annotations: List<ColumnFont>) {
+    fun setSize(font: Font, annotations: List<io.github.nillerr.ooxml.table.CellFont>) {
         val annotation = annotations.firstOrNull { it.size > -1 }
         if (annotation != null) {
             font.setSize(annotation.size)
@@ -55,7 +53,7 @@ internal object FontHelper {
     }
 
     @JvmName("setWeightForColumn")
-    fun setWeight(font: Font, annotations: List<ColumnFont>) {
+    fun setWeight(font: Font, annotations: List<io.github.nillerr.ooxml.table.CellFont>) {
         val annotation = annotations.firstOrNull { it.weight != FontWeight.UNSPECIFIED }
         if (annotation != null) {
             font.setWeight(annotation.weight)
@@ -65,7 +63,7 @@ internal object FontHelper {
     }
 
     @JvmName("setUnderlineForColumn")
-    fun setUnderline(font: Font, annotations: List<ColumnFont>) {
+    fun setUnderline(font: Font, annotations: List<io.github.nillerr.ooxml.table.CellFont>) {
         val annotation = annotations.firstOrNull { it.underline != FontUnderline.UNSPECIFIED }
         if (annotation != null) {
             font.setUnderline(annotation.underline)
@@ -75,7 +73,7 @@ internal object FontHelper {
     }
 
     @JvmName("setColorForColumn")
-    fun setColor(font: Font, annotations: List<ColumnFont>) {
+    fun setColor(font: Font, annotations: List<io.github.nillerr.ooxml.table.CellFont>) {
         val annotation = annotations.firstOrNull { it.indexedColor != IndexedColor.UNSPECIFIED }
         if (annotation != null) {
             font.setColor(annotation.indexedColor)

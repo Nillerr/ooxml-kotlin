@@ -20,13 +20,15 @@ class SXSFFTableEncoderTests {
     fun irregularTableThrowsException() {
         // Given
         val irregularTable = Table(
-            Row(
-                Column(value = StringColumnValue("A")),
-                Column(value = NumberColumnValue(9)),
-            ),
-            Row(
-                Column(value = NumberColumnValue(9)),
-            ),
+            rows = listOf(
+                Row(
+                    Column(value = StringColumnValue("A")),
+                    Column(value = NumberColumnValue(9)),
+                ),
+                Row(
+                    Column(value = NumberColumnValue(9)),
+                ),
+            )
         )
 
         val outputStream = ByteArrayOutputStream()
@@ -45,42 +47,47 @@ class SXSFFTableEncoderTests {
     @Test
     fun success() {
         // Given
-        val header = ColumnStyle(
+        val header = CellStyle(
             horizontalAlignment = HorizontalAlignment.CENTER,
-            font = ColumnFont(
+            font = CellFont(
                 size = 14,
                 weight = FontWeight.BOLD,
             )
         )
 
-        val value = ColumnStyle(font = ColumnFont(size = 12))
-
-        val id = value.copy(width = 20)
-        val date = value.copy(dataFormat = "dd/mm/yyyy", width = 14)
-        val distance = value.copy(width = 12)
-        val address = value.copy(width = 50)
+        val value = CellStyle(font = CellFont(size = 12))
+        val date = value.copy(dataFormat = "dd/mm/yyyy")
 
         val table = Table(
-            Row(
-                Column(value = StringColumnValue("id"), style = header),
-                Column(value = StringColumnValue("date"), style = header),
-                Column(value = StringColumnValue("distance"), style = header),
-                Column(value = StringColumnValue("origin"), style = header),
-                Column(value = StringColumnValue("destination"), style = header),
+            columns = listOf(
+                ColumnStyle(width = 20),
+                ColumnStyle(width = 14),
+                ColumnStyle(width = 12),
+                ColumnStyle(width = 50),
+                ColumnStyle(width = 50),
             ),
-            Row(
-                Column(value = StringColumnValue("mileage-1"), style = id),
-                Column(value = LocalDateColumnValue(LocalDate.parse("2022-03-06")), style = date),
-                Column(value = NumberColumnValue(4), style = distance),
-                Column(value = StringColumnValue("Åbrinken 61"), style = address),
-                Column(value = StringColumnValue("Billedeskærevej 17"), style = address),
-            ),
-            Row(
-                Column(value = StringColumnValue("mileage-2"), style = id),
-                Column(value = LocalDateColumnValue(LocalDate.parse("2022-03-06")), style = date),
-                Column(value = NumberColumnValue(4), style = distance),
-                Column(value = StringColumnValue("Billedeskærevej 17"), style = address),
-                Column(value = StringColumnValue("Åbrinken 61"), style = address),
+            rows = listOf(
+                Row(
+                    Column(value = StringColumnValue("id"), style = header),
+                    Column(value = StringColumnValue("date"), style = header),
+                    Column(value = StringColumnValue("distance"), style = header),
+                    Column(value = StringColumnValue("origin"), style = header),
+                    Column(value = StringColumnValue("destination"), style = header),
+                ),
+                Row(
+                    Column(value = StringColumnValue("mileage-1"), style = value),
+                    Column(value = LocalDateColumnValue(LocalDate.parse("2022-03-06")), style = date),
+                    Column(value = NumberColumnValue(4), style = value),
+                    Column(value = StringColumnValue("Åbrinken 61"), style = value),
+                    Column(value = StringColumnValue("Billedeskærevej 17"), style = value),
+                ),
+                Row(
+                    Column(value = StringColumnValue("mileage-2"), style = value),
+                    Column(value = LocalDateColumnValue(LocalDate.parse("2022-03-06")), style = date),
+                    Column(value = NumberColumnValue(4), style = value),
+                    Column(value = StringColumnValue("Billedeskærevej 17"), style = value),
+                    Column(value = StringColumnValue("Åbrinken 61"), style = value),
+                ),
             ),
         )
 

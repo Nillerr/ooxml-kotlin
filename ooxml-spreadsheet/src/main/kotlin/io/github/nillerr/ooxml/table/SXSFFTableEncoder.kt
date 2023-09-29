@@ -3,7 +3,6 @@ package io.github.nillerr.ooxml.table
 import io.github.nillerr.ooxml.spreadsheet.ApacheWorkbookFactory
 import io.github.nillerr.ooxml.spreadsheet.internal.CellStyleHelper
 import io.github.nillerr.ooxml.spreadsheet.internal.FontHelper
-import io.github.nillerr.ooxml.spreadsheet.internal.setColumnWidth
 import org.apache.poi.common.usermodel.HyperlinkType
 import org.apache.poi.ss.usermodel.CellStyle
 import org.apache.poi.xssf.streaming.SXSSFCell
@@ -27,26 +26,32 @@ class SXSFFTableEncoder(options: SXSFFTableEncoderOptions) : TableEncoder {
         val factory = ApacheWorkbookFactory(clock, applicationName, applicationVersion)
         val sxWorkbook = factory.createWorkbook()
 
-        val cellStyles = mutableMapOf<ColumnStyle, CellStyle>()
+        val cellStyles = mutableMapOf<io.github.nillerr.ooxml.table.CellStyle, CellStyle>()
         val dataFormats = mutableMapOf<String, Short?>()
 
         try {
             sxWorkbook.isCompressTempFiles = true
 
-            val sxSheet = sxWorkbook.createSheet()
+            val sxSheet = table.name?.let { sxWorkbook.createSheet(it) } ?: sxWorkbook.createSheet()
 
-            table.rows.forEachIndexed { rownum, row ->
-                val sxRow = sxSheet.createRow(rownum)
+            table.columns.forEachIndexed { colIndex, style ->
+                if (style.width > -1) {
+                    sxSheet.setColumnWidth(colIndex, style.width * 256)
+                }
 
-                row.columns.forEachIndexed { colnum, column ->
-                    val sxCell = sxRow.createCell(colnum)
+                if (style.hidden) {
+                    sxSheet.setColumnHidden(colIndex, true)
+                }
+            }
+
+            table.rows.forEachIndexed { rowIndex, row ->
+                val sxRow = sxSheet.createRow(rowIndex)
+
+                row.columns.forEachIndexed { colIndex, column ->
+                    val sxCell = sxRow.createCell(colIndex)
 
                     val columnStyle = column.style
                     sxCell.cellStyle = columnStyle?.let { style ->
-                        if (style.width > -1) {
-                            sxSheet.setColumnWidth(colnum, style)
-                        }
-
                         cellStyles.getOrPut(style) {
                             val dataFormatString = style.dataFormat
 
@@ -74,7 +79,7 @@ class SXSFFTableEncoder(options: SXSFFTableEncoderOptions) : TableEncoder {
         }
     }
 
-    private fun SXSSFWorkbook.createCellStyle(style: ColumnStyle, dataFormat: Short?): CellStyle {
+    private fun SXSSFWorkbook.createCellStyle(style: io.github.nillerr.ooxml.table.CellStyle, dataFormat: Short?): CellStyle {
         val styles = listOf(style)
 
         // Style

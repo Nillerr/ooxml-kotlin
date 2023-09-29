@@ -2,7 +2,7 @@
   <main:numFmts count="1">
     <main:numFmt numFmtId="164" formatCode="dd/mm/yyyy"/>
   </main:numFmts>
-  <main:fonts count="6">
+  <main:fonts count="4">
     <main:font>
       <main:sz val="11.0"/>
       <main:color indexed="8"/>
@@ -14,14 +14,6 @@
       <main:name val="Calibri"/>
       <main:sz val="14.0"/>
       <main:b val="true"/>
-    </main:font>
-    <main:font>
-      <main:name val="Calibri"/>
-      <main:sz val="12.0"/>
-    </main:font>
-    <main:font>
-      <main:name val="Calibri"/>
-      <main:sz val="12.0"/>
     </main:font>
     <main:font>
       <main:name val="Calibri"/>
@@ -52,14 +44,12 @@
   <main:cellStyleXfs count="1">
     <main:xf numFmtId="0" fontId="0" fillId="0" borderId="0"/>
   </main:cellStyleXfs>
-  <main:cellXfs count="6">
+  <main:cellXfs count="4">
     <main:xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>
     <main:xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyAlignment="true" applyFont="true">
       <main:alignment horizontal="center"/>
     </main:xf>
     <main:xf numFmtId="0" fontId="2" fillId="0" borderId="0" xfId="0" applyFont="true"/>
     <main:xf numFmtId="164" fontId="3" fillId="0" borderId="0" xfId="0" applyFont="true" applyNumberFormat="true"/>
-    <main:xf numFmtId="0" fontId="4" fillId="0" borderId="0" xfId="0" applyFont="true"/>
-    <main:xf numFmtId="0" fontId="5" fillId="0" borderId="0" xfId="0" applyFont="true"/>
   </main:cellXfs>
 </xml-fragment>
