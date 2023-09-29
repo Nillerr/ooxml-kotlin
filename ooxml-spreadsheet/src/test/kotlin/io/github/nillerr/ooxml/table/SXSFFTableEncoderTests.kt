@@ -22,11 +22,11 @@ class SXSFFTableEncoderTests {
         val irregularTable = Table(
             rows = listOf(
                 Row(
-                    Column(value = StringColumnValue("A")),
-                    Column(value = NumberColumnValue(9)),
+                    Column(value = "A"),
+                    Column(value = 9),
                 ),
                 Row(
-                    Column(value = NumberColumnValue(9)),
+                    Column(value = 9),
                 ),
             )
         )
@@ -68,25 +68,25 @@ class SXSFFTableEncoderTests {
             ),
             rows = listOf(
                 Row(
-                    Column(value = StringColumnValue("id"), style = header),
-                    Column(value = StringColumnValue("date"), style = header),
-                    Column(value = StringColumnValue("distance"), style = header),
-                    Column(value = StringColumnValue("origin"), style = header),
-                    Column(value = StringColumnValue("destination"), style = header),
+                    Column(value = "id", style = header),
+                    Column(value = "date", style = header),
+                    Column(value = "distance", style = header),
+                    Column(value = "origin", style = header),
+                    Column(value = "destination", style = header),
                 ),
                 Row(
-                    Column(value = StringColumnValue("mileage-1"), style = value),
-                    Column(value = LocalDateColumnValue(LocalDate.parse("2022-03-06")), style = date),
-                    Column(value = NumberColumnValue(4), style = value),
-                    Column(value = StringColumnValue("Åbrinken 61"), style = value),
-                    Column(value = StringColumnValue("Billedeskærevej 17"), style = value),
+                    Column(value = "mileage-1", style = value),
+                    Column(value = LocalDate.parse("2022-03-06"), style = date),
+                    Column(value = 4, style = value),
+                    Column(value = "Åbrinken 61", style = value),
+                    Column(value = "Billedeskærevej 17", style = value),
                 ),
                 Row(
-                    Column(value = StringColumnValue("mileage-2"), style = value),
-                    Column(value = LocalDateColumnValue(LocalDate.parse("2022-03-06")), style = date),
-                    Column(value = NumberColumnValue(4), style = value),
-                    Column(value = StringColumnValue("Billedeskærevej 17"), style = value),
-                    Column(value = StringColumnValue("Åbrinken 61"), style = value),
+                    Column(value = "mileage-2", style = value),
+                    Column(value = LocalDate.parse("2022-03-06"), style = date),
+                    Column(value = 4, style = value),
+                    Column(value = "Billedeskærevej 17", style = value),
+                    Column(value = "Åbrinken 61", style = value),
                 ),
             ),
         )
