@@ -12,7 +12,7 @@ plugins {
 
 allprojects {
     group = "io.github.nillerr"
-    version = "1.0.2"
+    version = "1.0.3"
 
     repositories {
         mavenCentral()
