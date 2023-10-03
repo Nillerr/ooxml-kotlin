@@ -2,7 +2,7 @@ package io.github.nillerr.ooxml.table
 
 import java.lang.IllegalArgumentException
 
-fun requireRegularTable(table: Table) {
+internal fun requireRegularTable(table: Table) {
     var numberOfColumns = -1
 
     table.rows.forEachIndexed { rowIndex, row ->

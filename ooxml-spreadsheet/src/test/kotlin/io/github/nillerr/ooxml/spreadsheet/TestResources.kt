@@ -10,8 +10,10 @@ fun readTestResource(name: String): ByteArray {
     return getTestResource(name).readBytes()
 }
 
+object TestResources
+
 fun getTestResource(name: String): InputStream {
-    val resource = WorkbookEncoderTests::class.java.getResourceAsStream(name)
+    val resource = TestResources::class.java.getResourceAsStream(name)
     if (resource == null) {
         throw IllegalArgumentException("A resource named `$name` could not be found.")
     }

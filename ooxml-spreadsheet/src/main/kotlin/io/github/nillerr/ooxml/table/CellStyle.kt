@@ -1,6 +1,6 @@
 package io.github.nillerr.ooxml.table
 
-import io.github.nillerr.ooxml.spreadsheet.style.HorizontalAlignment
+import io.github.nillerr.ooxml.style.HorizontalAlignment
 
 /**
  * Represents the style of a cell in a spreadsheet.
@@ -13,4 +13,8 @@ data class CellStyle(
     val horizontalAlignment: HorizontalAlignment = HorizontalAlignment.UNSPECIFIED,
     val font: CellFont = CellFont(),
     val dataFormat: String = "",
-)
+) {
+    companion object {
+        val default = CellStyle()
+    }
+}

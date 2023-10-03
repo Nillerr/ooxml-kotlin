@@ -6,6 +6,15 @@ import java.io.ByteArrayInputStream
 import java.io.InputStream
 import kotlin.test.assertEquals
 
+fun assertWorkbookKindaEquals(path: String, input: ByteArray) {
+    val workbook = assertIsWorkbook(input)
+    assertWorkbookEqualsXMLResource("$path/workbook.xml", workbook)
+    assertStylesheetEqualsXMLResource("$path/styles.xml", workbook)
+
+    val sheet = assertSingleSheet(workbook)
+    assertSheetEqualsXMLResource("$path/sheet1.xml", sheet)
+}
+
 fun assertIsWorkbook(input: ByteArray): XSSFWorkbook {
     return assertIsWorkbook(ByteArrayInputStream(input))
 }

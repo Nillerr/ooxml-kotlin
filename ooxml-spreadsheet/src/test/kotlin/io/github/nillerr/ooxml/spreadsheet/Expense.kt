@@ -1,12 +1,13 @@
 package io.github.nillerr.ooxml.spreadsheet
 
-import io.github.nillerr.ooxml.spreadsheet.annotation.CellFont
-import io.github.nillerr.ooxml.spreadsheet.annotation.CellStyle
-import io.github.nillerr.ooxml.spreadsheet.annotation.Column
-import io.github.nillerr.ooxml.spreadsheet.annotation.Sheet
-import io.github.nillerr.ooxml.spreadsheet.style.FontUnderline
-import io.github.nillerr.ooxml.spreadsheet.style.FontWeight
-import io.github.nillerr.ooxml.spreadsheet.style.HorizontalAlignment
+import io.github.nillerr.ooxml.Hyperlink
+import io.github.nillerr.ooxml.IndexedColor
+import io.github.nillerr.ooxml.databind.annotations.CellFont
+import io.github.nillerr.ooxml.databind.annotations.CellStyle
+import io.github.nillerr.ooxml.databind.annotations.Column
+import io.github.nillerr.ooxml.style.FontUnderline
+import io.github.nillerr.ooxml.style.FontWeight
+import io.github.nillerr.ooxml.style.HorizontalAlignment
 import java.math.BigDecimal
 import java.net.URI
 import java.time.Instant
@@ -14,14 +15,6 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 
-@Sheet(
-    name = "Expenses",
-    headerStyle = CellStyle(
-        font = CellFont(
-            weight = FontWeight.BOLD,
-        )
-    ),
-)
 data class Expense(
     @Column("expenses.column.merchant", width = 20)
     val merchant: String,

@@ -9,4 +9,8 @@ package io.github.nillerr.ooxml.table
 data class ColumnStyle(
     val hidden: Boolean = false,
     val width: Int = -1,
-)
+) {
+    companion object {
+        val default = ColumnStyle()
+    }
+}
